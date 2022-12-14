@@ -1,5 +1,5 @@
 $(function(){
-    let url = "https://cors-anywhere.herokuapp.com/http://bayuendar.ezyro.com/php/server.php";
+    let url = "https://bayuendar.000webhostapp.com/server.php";
     // ucapan
     $.ajax({
         url:url,
