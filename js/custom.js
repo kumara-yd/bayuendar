@@ -1,23 +1,5 @@
-// ucapan
-// $.get($url1, function(data) {
-//     data = JSON.parse(data);
-//     for (let i = 0; i < data.length; i++) {
-//         const val = JSON.parse(data[i]);
-//         const item = `
-//         <a class="list-group-item" title="${val.alamat}">
-//             <div class="name"><span class="strong" style="font-size: 24px">${val.nama}</span> 
-//             <span class="label ${val.kehadiran_st > 0 ? "label-success" : "label-warning"}">${val.kehadiran_st > 0 ? "Hadir" : "Tidak Hadir"}</span></div>
-//             <hr style="margin-top: 0;">
-//             <div class="comment">${val.pesan}</div>
-//         </a>
-//     `;
-
-//         $("#fh5co-testimonial .list-group").append(item);
-//     }
-// });
-
 $(function(){
-    let url = "http://localhost/php8/wedding/server/server.php";
+    let url = "http://bayuendar.ezyro.com/php/server.php";
     // ucapan
     $.ajax({
         url:url,
