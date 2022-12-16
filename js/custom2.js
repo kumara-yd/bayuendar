@@ -105,34 +105,22 @@ function galery() {
     var xhr = createCORSRequest(method, url);
 
     xhr.onload = function () {
-        // let data = JSON.parse(xhr.responseText);
-        // console.log(xhr.responseText);
-        // Gallery
-        const lgContainer = document.getElementById('inline-gallery-container');
-        const inlineGallery = lightGallery(lgContainer, {
-            container: lgContainer,
-            dynamic: true,
-            thumbnail: true,
-            // Turn off hash plugin in case if you are using it
-            // as we don't want to change the url on slide change
-            hash: false,
-            // Do not allow users to close the gallery
-            closable: false,
-            // Add maximize icon to enlarge the gallery
-            showMaximizeIcon: true,
-            download: false,
-            // Append caption inside the slide item
-            // to apply some animation for the captions (Optional)
-            appendSubHtmlTo: '.lg-item',
-            // Delay slide transition to complete captions animations
-            // before navigating to different slides (Optional)
-            // You can find caption animation demo on the captions demo page
-            slideDelay: 400,
-            dynamicEl: xhr.responseText,
+        let data = JSON.parse(xhr.responseText);
+        
+        data.forEach(val => {
+            const item = `
+                <a href="${val.src}">
+                    <img src="${val.src}" />
+                </a>
+            `;
+
+            $("#animated-thumbnails").append(item);
         });
 
-        // Since we are using dynamic mode, we need to programmatically open lightGallery
-        inlineGallery.openGallery();
+        lightGallery(document.getElementById('animated-thumbnails-gallery'), {
+            thumbnail: true,
+        });
+
     };
 
     xhr.onerror = function () {
