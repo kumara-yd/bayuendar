@@ -1,32 +1,43 @@
-<script>
-    var createCORSRequest = function (method, url) {
-        var xhr = new XMLHttpRequest();
-        if ("withCredentials" in xhr) {
-            // Most browsers.
-            xhr.open(method, url, true);
-        } else if (typeof XDomainRequest != "undefined") {
-            // IE8 & IE9
-            xhr = new XDomainRequest();
-            xhr.open(method, url);
-        } else {
-            // CORS not supported.
-            xhr = null;
-        }
-        return xhr;
-    };
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var createCORSRequest = function (method, url) {
+            var xhr = new XMLHttpRequest();
+            if ("withCredentials" in xhr) {
+                // Most browsers.
+                xhr.open(method, url, true);
+            } else if (typeof XDomainRequest != "undefined") {
+                // IE8 & IE9
+                xhr = new XDomainRequest();
+                xhr.open(method, url);
+            } else {
+                // CORS not supported.
+                xhr = null;
+            }
+            return xhr;
+        };
 
-    var url = 'https://bayuendar.000webhostapp.com/server.php?callback=jQuery21408946999735701777_1671163101103&pesan=1&_=1671163101104';
-    var method = 'GET';
-    var xhr = createCORSRequest(method, url);
+        var url = 'https://bayuendar.000webhostapp.com/server.php?callback=jQuery21408946999735701777_1671163101103&pesan=1&_=1671163101104';
+        var method = 'GET';
+        var xhr = createCORSRequest(method, url);
 
-    xhr.onload = function (data) {
-        console.log(data);
-        alert('Sukses');
-    };
+        xhr.onload = function (data) {
+            console.log(data);
+            alert('Sukses');
+        };
 
-    xhr.onerror = function () {
-        alert('Gagal');
-    };
+        xhr.onerror = function () {
+            alert('Gagal');
+        };
 
-    xhr.send();
-</script>
+        xhr.send();
+    </script>
+</body>
+</html>
