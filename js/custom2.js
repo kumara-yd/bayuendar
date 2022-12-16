@@ -93,3 +93,7 @@ function env() {
 
     xhr.send();
 }
+
+pesan();
+
+env();
