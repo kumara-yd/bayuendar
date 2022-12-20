@@ -110,7 +110,7 @@ function galery() {
         data.forEach(val => {
             const item = `
                 <a data-fancybox="gallery" href="${val.src}">
-                    <img src="${val.thumb}" loading="lazy" width="180" height="180" class="hover" />
+                    <img src="${val.thumb}" loading="lazy" width="25%" height="25%" class="hover" />
                 </a>
             `;
 
