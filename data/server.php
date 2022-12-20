@@ -67,12 +67,12 @@ if(isset($_GET['env'])){
 if(isset($_GET['gallery'])){
     $dir = "images/gallery";
     $gal = [];
-    for ($i=1; $i < 17; $i++) {
+    for ($i=1; $i < 18; $i++) {
         $value = ($i < 10) ? 'gal0' : 'gal';
         $value = $value . $i . '.png';
         $gal[] = [
                 'src' => $dir . "/" . $value,
-                'thumb' => $dir . "/" . $value,
+                'thumb' => $dir . "/thumb-" . $value,
             ];
     }
     header("Access-Control-Allow-Origin: *");
