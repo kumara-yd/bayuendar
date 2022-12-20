@@ -148,3 +148,11 @@ $(function(){
         }
     });
 })
+
+const url = new URL(
+    window.location.href
+);
+
+let kepada = url.searchParams.get('to');
+$('input#nama').val(kepada);
+$('.kepada').append(kepada);
