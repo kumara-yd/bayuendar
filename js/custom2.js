@@ -140,11 +140,11 @@ $(function(){
         if(this.className == 'Stop'){
             $("audio").trigger("pause");
             $(this).removeClass(this.className).addClass('Start');
-            $(this).html('Start');
+            $(this).html('<img src="images/audio/play.png" alt="play">');
         } else {
             $("audio").trigger("play");
             $(this).removeClass(this.className).addClass('Stop');
-            $(this).html('Stop');
+            $(this).html('<img src="images/audio/pause.png" alt="pause">');
         }
     });
 })
